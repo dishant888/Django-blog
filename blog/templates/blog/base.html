@@ -4,7 +4,10 @@
 	<title>Blogs</title>
 </head>
 <body>
-	<center><h1>BLOGS</h1></center>
+	<center><h1><a href="{% url 'post_list' %}">BLOGS</a></h1></center>
+{% if user.is_authenticated %}
+	<a href="{% url 'post_new' %}">Add Blog</a>
+{% endif %}
 	<hr>
 	{% block content %}
 	{% endblock %}
